@@ -16,8 +16,8 @@ public:
 	void setDenumerator(const int denumerator);
 //operators
 	Fraction operator+(const Fraction& other);
-	/*Fraction operator-(const Fraction& other);
-	Fraction operator*(const Fraction& other);
+	Fraction operator-(const Fraction& other);
+	/*Fraction operator*(const Fraction& other);
 	Fraction operator/(const Fraction& other);
 	Fraction operator!(const Fraction& other);*/
 	~Fraction();
