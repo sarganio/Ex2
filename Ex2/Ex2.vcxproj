@@ -151,10 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DenominatorIsZeroException.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DenominatorIsZeroException.cpp" />
     <ClCompile Include="Ex2.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="pch.cpp">
