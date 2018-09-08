@@ -17,9 +17,9 @@ public:
 //operators
 	Fraction operator+(const Fraction& other);
 	Fraction operator-(const Fraction& other);
-	/*Fraction operator*(const Fraction& other);
+	Fraction operator*(const Fraction& other);
 	Fraction operator/(const Fraction& other);
-	Fraction operator!(const Fraction& other);*/
+	Fraction operator!()const;
 	~Fraction();
 };
 

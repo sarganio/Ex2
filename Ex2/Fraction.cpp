@@ -32,9 +32,23 @@ Fraction Fraction::operator-(const Fraction& other) {//a+(-b)
 	return *this + conjugated;
 
 }
-//Fraction operator*(const Fraction& other);
-//Fraction operator/(const Fraction& other);
-//Fraction operator!(const Fraction& other);
+Fraction Fraction::operator*(const Fraction& other) {
+	Fraction ans;
+	ans._numerator = this->_numerator*other._numerator;
+	ans._denumerator = this->_denumerator*other._denumerator;
+	return ans;
+}
+Fraction Fraction::operator/(const Fraction& other) {
+	Fraction ans = (*this)*!other;
+	return ans;
+
+}
+Fraction Fraction::operator!()const {
+	Fraction ans;
+	ans._denumerator = this->_numerator;
+	ans._numerator = this->_denumerator;
+	return ans;
+}
 
 
 Fraction::~Fraction()
