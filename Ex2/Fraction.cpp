@@ -1,13 +1,15 @@
 #include "pch.h"
 #include "Fraction.h"
 #include "DenominatorIsZeroException.h"
+#include "GeneralErrorException.h"
 
 
 Fraction::Fraction(int numerator,int denumerator){
 	_numerator = numerator;
 	if (!denumerator) {
-		DenominatorIsZeroException zeroDevision;
-		throw zeroDevision;
+		GeneralErrorException GEE;
+		GEE.setState(1);
+		throw GEE;
 	}
 	_denumerator = denumerator;
 
@@ -25,8 +27,9 @@ void Fraction::setNumerator(const int numerator) {
 }
 void Fraction::setDenumerator(const int denumerator) {
 	if (!denumerator) {
-		DenominatorIsZeroException zeroDevision;
-		throw zeroDevision;
+		GeneralErrorException GEE;
+		GEE.setState(3);
+		throw GEE;
 	}
 	this->_denumerator = denumerator;
 }
@@ -60,8 +63,9 @@ Fraction Fraction::operator/(const Fraction& other) {//(a/b)/(c/d)=>(a/b)*(d/c))
 Fraction Fraction::operator!()const {
 	Fraction ans;
 	if (!this->_numerator) {
-		DenominatorIsZeroException zeroDevision;
-		throw zeroDevision;
+		GeneralErrorException GEE;
+		GEE.setState(2);
+		throw GEE;
 	}
 	ans._denumerator = this->_numerator;
 	ans._numerator = this->_denumerator;
